@@ -1,59 +1,53 @@
-# DeepVision
-Vehicle Classification and Vehicle Detection
+ DeepVision - Vehicle Detection and Classification System 🚗
 
-A YOLOv8-based real-time vehicle detection system built as an academic project. The system can detect and classify 8 types of vehicles in images with bounding boxes and confidence scores.
+A YOLOv8-based real-time vehicle detection system built as a university project. The system can detect and classify 8 types of vehicles in images with bounding boxes.
+---
 
-Project Overview
-Goal: Build an accurate vehicle detection system using deep learning
-Vehicle Classes Detected:
+## 📋 Project Overview
 
-🚲 Bicycle
+**Goal:** Build an accurate vehicle detection and classification system using deep learning
 
-🚌 Bus
+**Vehicle Classes Detected:**
+- 🚲 Bicycle
+- 🚌 Bus
+- 🚗 Car
+- 🏍️ Motorcycle
+- 🛺 Three-wheeler
+- 🚜 Tractor
+- 🚚 Truck
+- 🚐 Van
 
-🚗 Car
+---
 
-🏍️ Motorcycle
+## 👥 Team Structure
 
-🛺 Three-wheeler
+**6-Member Team (Working as groups):**
 
-🚜 Tractor
+**Backend Development (ML & Data):**
+- Pruthivi
+- Adhil
+- Budara
 
-🚚 Truck
+**Frontend Development (Application & UI):**
+- Luke
+- Victor
+- Prince
 
-🚐 Van
+---
 
-Team Structure
-6-Member Team (Working in 2 separate groups):
+## 🛠️ Tech Stack
 
-Backend Development (ML & Data):
+**Machine Learning:**
+- YOLOv8 (Ultralytics)
+- PyTorch
+- OpenCV
+- Google Colab (GPU training)
 
-Pruthivi
-Adhil
-Budara
+**Development:**
+- Python 3.10 or above
+- Jupyter Notebook
+- Streamlit (for web app)
+- Git/GitHub
 
-Frontend Development (Application & UI):
-
-Luke
-Victor
-Prince
-
-
-🛠️ Tech Stack
-Machine Learning:
-
-YOLOv8 (Ultralytics)
-PyTorch
-OpenCV
-Google Colab (GPU training) 
-
-Development:
-
-Python 3.10 or oer
-Jupyter Notebook
-Streamlit (for web app)
-Git/GitHub
-
-Dataset:
-
-Roboflow for dataset sourcing
+**Dataset:**
+- Roboflow
