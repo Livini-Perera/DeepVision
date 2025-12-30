@@ -1,2 +1,2 @@
 # DeepVision
-Image Classification and Object Detection
+Vehicle Classification and Vehicle Detection
