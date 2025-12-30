@@ -8,12 +8,19 @@ Goal: Build an accurate vehicle detection system using deep learning
 Vehicle Classes Detected:
 
 🚲 Bicycle
+
 🚌 Bus
+
 🚗 Car
+
 🏍️ Motorcycle
+
 🛺 Three-wheeler
+
 🚜 Tractor
+
 🚚 Truck
+
 🚐 Van
 
 Team Structure
