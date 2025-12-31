@@ -84,3 +84,38 @@ datasets/
     ├── README.dataset     # Dataset information
     └── README.roboflow    # Roboflow attribution
 ```
+
+## 🎉 Model Training
+
+### Model Performance
+
+Successfully trained a YOLOv8s model on our vehicle detection dataset
+
+**Final Results:**
+- **Model:** YOLOv8s
+- **Dataset:** 4423 images
+- **Training Time:** 2-2.5 hours (Google Colab T4 GPU)
+- **Final Metrics:**
+  - **mAP:** [82.74%]
+  - **Precision:** [84.28%]
+  - **Recall:** [77.48%]
+
+### Per-Class Performance
+
+| Vehicle Type | Precision | Recall | mAP     |
+|--------------|-----------|--------|---------|
+| Bicycle      | 56.5%     | 54.5%  | 53.7%   |
+| Bus          | 85.6%     | 86%    | 89.7%   |
+| Car          | 80.6%     | 71.1%  | 79%     |
+| Motorcycle   | 88.9%     | 74.5%  | 83.1%   |
+| Three-wheeler| 90.4%     | 86.4%  | 93.2%   |
+| Tractor      | 92.2%     | 84.1%  | 85%     |
+| Truck        | 86.7%     | 77.1%  | 84.3%   |
+| Van          | 93.4%     | 86%    | 94%     |
+
+### Training Environment
+
+- **Platform:** Google Colab
+- **GPU:** Tesla T4
+- **Framework:** YOLOv8 (Ultralytics)
+- **PyTorch Version:** 2.9.0 (Default)
