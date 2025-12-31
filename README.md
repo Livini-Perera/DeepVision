@@ -119,3 +119,7 @@ Successfully trained a YOLOv8s model on our vehicle detection dataset
 - **GPU:** Tesla T4
 - **Framework:** YOLOv8 (Ultralytics)
 - **PyTorch Version:** 2.9.0 (Default)
+  
+  Error: PyTorch 2.6+ changed weights_only default from False to True, blocking YOLOv8 model loading with UnpicklingError because YOLO classes weren't in the safe_globals whitelist.
+  
+   Fix: Patched torch.load to use weights_only=False for trusted Ultralytics weights.
