@@ -1,8 +1,3 @@
-<header style="width: 100%; height: 10px;">
-  <img src="header.gif" alt="Header Image" style="width: 100%; height: 20%;" />
-</header>
-
-
 **DeepVision - Vehicle Detection and Classification System 🚗**
 
 DeepVision: YOLOv8-based real-time vehicle detection system built as a university project. The system can detect and classify 8 types of vehicles in images with bounding boxes.
