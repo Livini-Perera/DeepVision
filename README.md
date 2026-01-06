@@ -123,3 +123,18 @@ Successfully trained a YOLOv8s model on our vehicle detection dataset
   Error: PyTorch 2.6+ changed weights_only default from False to True, blocking YOLOv8 model loading with UnpicklingError because YOLO classes weren't in the safe_globals whitelist.
   
    Fix: Patched torch.load to use weights_only=False for trusted Ultralytics weights.
+
+### Frontend
+
+### `detector.py`
+
+**Purpose:** Core vehicle detection using YOLOv8
+
+**Main Class:**
+- `VehicleDetector` - Handles all detection operations
+
+**Key Methods:**
+- `detect(image_path)` - Detect vehicles in single image
+- `annotate_image(image_path, detections, output_path)` - Draw bounding boxes
+- `process_single_image(image_path, output_dir)` - Complete pipeline for one image
+- `process_folder(folder_path, output_dir)` - Batch processing
