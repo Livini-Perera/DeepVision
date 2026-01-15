@@ -126,6 +126,47 @@ Successfully trained a YOLOv8s model on our vehicle detection dataset
 
 ## Frontend
 
+## 📁 utils/ Package
+
+**Purpose:** Contains helper modules that power the VehicleDetectionSystem
+
+**Structure:**
+```
+utils/
+├── __init__.py        # Makes utils a Python package
+├── detector.py        # Vehicle detection logic (YOLOv8)
+├── reporter.py        # Report and statistics generation
+└── image_helper.py    # Logo and image utilities
+```
+
+**What Each Module Does:**
+- `detector.py` - Core vehicle detection using YOLOv8 model
+- `reporter.py` - Generates CSV reports and summary statistics
+- `image_helper.py` - Handles logo display for the UI
+- `__init__.py` - Makes the folder a package and controls imports
+
+---
+
+## 📦 __init__.py
+
+**Purpose:** Makes `utils/` a Python package and enables clean imports
+
+**What It Does:**
+
+- Converts the `utils/` folder into an importable Python package  
+- Exports `VehicleDetector` and `generate_report` for easy access  
+- Enables shorthand imports: `from utils import VehicleDetector` instead of `from utils.detector import VehicleDetector`
+
+**Exports:**
+- `VehicleDetector` - Main detection class
+- `generate_report` - CSV report generation function
+
+**The `__all__` List:**  
+Defines what's publicly available when someone imports from the package
+
+**Why It's Needed:**  
+Without this file, Python treats `utils/` as a regular folder, not a package, and imports won't work.
+
 ## 📊detector.py
 
 **Purpose:** Core vehicle detection using YOLOv8
