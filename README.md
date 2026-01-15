@@ -124,9 +124,9 @@ Successfully trained a YOLOv8s model on our vehicle detection dataset
   
    Fix: Patched torch.load to use weights_only=False for trusted Ultralytics weights.
 
-### Frontend
+## Frontend
 
-### `detector.py`
+## 📊detector.py
 
 **Purpose:** Core vehicle detection using YOLOv8
 
@@ -138,3 +138,37 @@ Successfully trained a YOLOv8s model on our vehicle detection dataset
 - `annotate_image(image_path, detections, output_path)` - Draw bounding boxes
 - `process_single_image(image_path, output_dir)` - Complete pipeline for one image
 - `process_folder(folder_path, output_dir)` - Batch processing
+
+## 📊 reporter.py
+
+**Purpose:** Generate reports and statistics from detection results
+
+**Key Functions:**
+
+- `generate_report(results, output_path)` - Creates detailed CSV report from batch detection results  
+  - Parameters: Detection results list, output file path  
+  - Returns: pandas DataFrame  
+  - Output: CSV file with per-image breakdown (image name, vehicle counts, dominant class, confidence scores)
+
+- `generate_summary_stats(results)` - Calculates overall statistics across all processed images  
+  - Parameters: Detection results list  
+  - Returns: Dictionary with total_images, total_vehicles, avg_confidence, class_distribution  
+  - Use for: Dashboard metrics, overall analysis, batch processing summaries
+
+**Dependencies:**
+- `pandas` - Data manipulation and CSV generation
+
+**CSV Report Columns:**
+- Image Name - Filename of processed image
+- Total Vehicles - Number of vehicles detected
+- Dominant Class - Most common vehicle type in image
+- Average Confidence - Mean detection confidence (percentage)
+- [Class] Count - Individual counts for each vehicle class (car, truck, bus, etc.)
+
+**Summary Statistics Output:**
+- `total_images` - Number of images processed
+- `total_vehicles` - Total vehicles detected across all images
+- `avg_confidence` - Average confidence score (0-1)
+- `class_distribution` - Dictionary with count per vehicle class
+
+**Integration:** Works seamlessly with `detector.py` output for batch processing workflows
