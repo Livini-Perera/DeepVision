@@ -213,3 +213,23 @@ Without this file, Python treats `utils/` as a regular folder, not a package, an
 - `class_distribution` - Dictionary with count per vehicle class
 
 **Integration:** Works seamlessly with `detector.py` output for batch processing workflows
+
+## 🖼️ image_helper.py
+
+**Purpose:** Helper functions for logo and image display in Streamlit UI
+
+**Key Functions:**
+
+- `get_base64_image(image_path)` - Converts image file to base64 string for HTML embedding  
+- `display_sidebar_logo(logo_path, width)` - Displays company logo in Streamlit sidebar
+
+**Dependencies:**
+- `base64` - Image encoding
+- `streamlit` - UI framework
+
+**Usage:**  
+Allows adding a custom logo to the application sidebar for branding purposes
+
+**Parameters:**
+- `logo_path` - Path to logo image file (PNG, JPG, JPEG)
+- `width` - Logo width in pixels (default: 150)
