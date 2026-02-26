@@ -130,110 +130,111 @@ Successfully trained a YOLOv8s model on our vehicle detection dataset
 
 ## Frontend
 
-## 📁 utils/ Package
+## 📌 Overview
 
-**Purpose:** Contains helper modules that power the VehicleDetectionSystem
-
-**Structure:**
-```
-utils/
-├── __init__.py        # Makes utils a Python package
-├── detector.py        # Vehicle detection logic (YOLOv8)
-├── reporter.py        # Report and statistics generation
-└── image_helper.py    # Logo and image utilities
-```
-
-**What Each Module Does:**
-- `detector.py` - Core vehicle detection using YOLOv8 model
-- `reporter.py` - Generates CSV reports and summary statistics
-- `image_helper.py` - Handles logo display for the UI
-- `__init__.py` - Makes the folder a package and controls imports
+The DeepVision frontend has been enhanced to provide a professional, user-friendly dashboard interface while maintaining a strong backend focus. The interface is built using **Streamlit** and styled using a custom **CSS blue gradient theme**.
 
 ---
 
-## 📦 __init__.py
+## 🎨 UI Enhancements
 
-**Purpose:** Makes `utils/` a Python package and enables clean imports
+### Professional Blue Theme
+- Gradient top banner
+- Styled feature cards
+- Rounded containers
+- Clean spacing
+- Sidebar gradient background
 
-**What It Does:**
+Custom styling is implemented using:
 
-- Converts the `utils/` folder into an importable Python package  
-- Exports `VehicleDetector` and `generate_report` for easy access  
-- Enables shorthand imports: `from utils import VehicleDetector` instead of `from utils.detector import VehicleDetector`
+---
 
-**Exports:**
-- `VehicleDetector` - Main detection class
-- `generate_report` - CSV report generation function
+### Logo Integration
+- Project logo displayed in the sidebar
+- Reinforces branding
+- Positioned above configuration settings
 
-**The `__all__` List:**  
-Defines what's publicly available when someone imports from the package
+---
 
-**Why It's Needed:**  
-Without this file, Python treats `utils/` as a regular folder, not a package, and imports won't work.
+### Sidebar Configuration Panel
 
-## 📊detector.py
+The sidebar now includes:
 
-**Purpose:** Core vehicle detection using YOLOv8
+- Input Mode Selection  
+  - Single Image  
+  - Multiple Images  
 
-**Main Class:**
-- `VehicleDetector` - Handles all detection operations
+- 🎚 Confidence Threshold Slider  
+  - Adjustable from 0.1 to 1.0  
 
-**Key Methods:**
-- `detect(image_path)` - Detect vehicles in single image
-- `annotate_image(image_path, detections, output_path)` - Draw bounding boxes
-- `process_single_image(image_path, output_dir)` - Complete pipeline for one image
-- `process_folder(folder_path, output_dir)` - Batch processing
+- 🚗 Supported Vehicle Classes with Emojis  
+  - 🚗 Car  
+  - 🚛 Truck  
+  - 🚌 Bus  
+  - 🏍 Motorbike  
+  - 🚲 Bicycle  
+  - 🚐 Van  
+  - 🛺 Three Wheeler  
 
-## 📊 reporter.py
+This improves usability and clarity for users.
 
-**Purpose:** Generate reports and statistics from detection results
+---
 
-**Key Functions:**
+## 🖥 Main Interface Sections
 
-- `generate_report(results, output_path)` - Creates detailed CSV report from batch detection results  
-  - Parameters: Detection results list, output file path  
-  - Returns: pandas DataFrame  
-  - Output: CSV file with per-image breakdown (image name, vehicle counts, dominant class, confidence scores)
+### Top Section
+Displays:
+- System Title
+- Model Description
+- Visual gradient background
 
-- `generate_summary_stats(results)` - Calculates overall statistics across all processed images  
-  - Parameters: Detection results list  
-  - Returns: Dictionary with total_images, total_vehicles, avg_confidence, class_distribution  
-  - Use for: Dashboard metrics, overall analysis, batch processing summaries
+---
 
-**Dependencies:**
-- `pandas` - Data manipulation and CSV generation
+### Features Section
 
-**CSV Report Columns:**
-- Image Name - Filename of processed image
-- Total Vehicles - Number of vehicles detected
-- Dominant Class - Most common vehicle type in image
-- Average Confidence - Mean detection confidence (percentage)
-- [Class] Count - Individual counts for each vehicle class (car, truck, bus, etc.)
+The system now clearly lists:
 
-**Summary Statistics Output:**
-- `total_images` - Number of images processed
-- `total_vehicles` - Total vehicles detected across all images
-- `avg_confidence` - Average confidence score (0-1)
-- `class_distribution` - Dictionary with count per vehicle class
+- YOLOv8-based Vehicle Detection
+- Multi-class Vehicle Recognition
+- Adjustable Confidence Threshold
+- Single & Batch Image Processing
+- Per-Class Vehicle Count
+- Average Confidence Calculation
+- Automated CSV Report Generation
+- Clean Dashboard UI
 
-**Integration:** Works seamlessly with `detector.py` output for batch processing workflows
+---
 
-## 🖼️ image_helper.py
+### Get Started Section
 
-**Purpose:** Helper functions for logo and image display in Streamlit UI
+Step-by-step instructions guide users:
 
-**Key Functions:**
+1. Select input mode
+2. Adjust confidence threshold
+3. Upload image(s)
+4. Review detection results
+5. Download final structured report
 
-- `get_base64_image(image_path)` - Converts image file to base64 string for HTML embedding  
-- `display_sidebar_logo(logo_path, width)` - Displays company logo in Streamlit sidebar
+---
 
-**Dependencies:**
-- `base64` - Image encoding
-- `streamlit` - UI framework
+## 📊 Report Improvements
 
-**Usage:**  
-Allows adding a custom logo to the application sidebar for branding purposes
+The frontend now displays a structured detection report:
 
-**Parameters:**
-- `logo_path` - Path to logo image file (PNG, JPG, JPEG)
-- `width` - Logo width in pixels (default: 150)
+| Image Name | Vehicle Class | Count | Average Confidence |
+|------------|--------------|-------|--------------------|
+
+Key improvements:
+- Aggregated per-class statistics
+- Hidden dataframe index
+- Professional report format
+- CSV export option
+
+---
+
+## 📥 Download Feature
+
+Users can now download:
+
+- Single Image Final Report
+- Batch Detection Report
