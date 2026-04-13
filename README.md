@@ -66,7 +66,7 @@ Cannot upload the dataset due to size constraints
 
 Our dataset was obtained from **Roboflow Universe** in YOLO format.
 
-- **Total Images:** 4433 images
+- **Total Images:** 4423 images
 - **Classes:** 8 vehicle types
 - **Format:** YOLO v8
 
